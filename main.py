@@ -5,7 +5,7 @@ import redis
 import uuid
 
 app = FastAPI()
-r = redis.Redis(host='localhost', port=6379, db=0, decode_responses=True)
+r = redis.Redis.from_url("redis://default:V1rfVB4sOYq1r9tIA3NDQcemhsAD4TeY@redis-15777.c243.eu-west-1-3.ec2.redns.redis-cloud.com:15777")
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def get_password_hash(password):
